@@ -3,10 +3,10 @@ import Home from './pages/Home'
 
 const App = () => {
   /**
-   * App semplicemente fa il render del componente pagina Home
-   * per questo specifico esempio di applicazione potrebbe essere superfluo
-   * lo lascio per capire meglio come dividere i componenti in base
-   * al ruolo che hanno all'interno dell'applicazione
+   * App simply renders the Home page component
+   * for this specific application example it may be superfluous
+   * I leave it to better understand how to divide the components
+   * according to the role they have within the application
    */
   return <Home />
 }

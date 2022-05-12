@@ -4,6 +4,6 @@ import './index.css'
 import App from './App'
 
 /**
- * Render applicazione App montata nel div con id "root"
+ * Render application App mounted in the div with id "root"
  */
 ReactDOM.render(<App />, document.getElementById('root'))

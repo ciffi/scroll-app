@@ -1,17 +1,16 @@
 # ScrollApp
 
-Creare un'applicazione Web responsive che interroghi un API e mostri i risultati (griglia o lista) paginati tramite lazy
-load
+Create a responsive web application that queries an API and displays the results (grid or list) paginated by lazy
+loading or infinite scroll
 
-Per ogni item mostrare solo il title, il body verrà mostrato al click (modale o accordion)
+For each item show only the title, the body will be shown on click (modal or accordion)
 
-Come API si può utilizzare https://jsonplaceholder.typicode.com/posts
+As an API you can use https://jsonplaceholder.typicode.com/posts
 
-Per eseguire richieste paginate valorizzare i due parametri _start=0 e _limit=10, quindi per avere la prima pagina con
-10 elementi l'endpoint diventa https://jsonplaceholder.typicode.com/posts?_start=0&_limit=10
+To execute paginated requests, value the two parameters _start = 0 and _limit = 10, then to have the first page with 10
+elements the endpoint becomes https://jsonplaceholder.typicode.com/posts?_start=0&_limit=10
 
-E' preferibile utilizzare React (hooks e context) con la libreria styled-components per costruire il layout
-
+It is preferable to use React (hooks and context) with the styled-components library to build the layout
 
 ## Development
 1. `npm i`

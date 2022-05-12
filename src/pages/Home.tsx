@@ -4,8 +4,8 @@ import List from '../components/List/List'
 
 const Home = () => {
   /**
-   * il componente pagina Home importa uno styled-component StyledLayout
-   * che diventa il wrapper dei componenti della pagina Header e List
+   * the Home page component imports a styled-component StyledLayout
+   * which becomes the wrapper of the Header and List page components
    */
   return (
     <StyledLayout>

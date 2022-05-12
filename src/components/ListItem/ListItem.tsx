@@ -11,9 +11,8 @@ import { ListContext } from '../../context/ListContext'
 const ListItem: FunctionComponent<{ title: string; body: string; id: number }> =
   ({ title, body, id }) => {
     /**
-     * tramite l'hook useContext importo dal contesto lo stato currentDetail e il relativo setCurrentDetail
-     * al click del singolo item rappresentato dal componente StyledListItem
-     * interagisco con lo stato globale
+     * through the useContext hook, I import the currentDetail state and its setCurrentDetail from the context
+     * by clicking on the single item represented by the StyledListItem component I interact with the global state
      */
     const { currentDetail, setCurrentDetail } = useContext(ListContext)
 

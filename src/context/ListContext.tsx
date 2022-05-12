@@ -1,25 +1,25 @@
 import React, { createContext, PropsWithChildren, useState } from 'react'
 
 /**
- * creo un context
+ * create a context
  */
 export const ListContext = createContext<any>({})
 
 /**
- * creo il provider del context
+ * create the context provider
  */
 export const ListContextProvider = (props: PropsWithChildren<any>) => {
   /**
-   * definisco uno stato globale
+   * define a global state
    */
   const [currentDetail, setCurrentDetail] = useState<number | null>(null)
 
   /**
-   * ritorno il provider del contesto
-   * l'attributo value è l'oggetto che mi viene restituito dal contesto quando vado ad utilizzarlo
-   * o tramite l'hook useContext
+   * returns the context provider
+   * the value attribute is the object that is returned by the context when I go to use it
+   * or through the useContext hook
    *
-   * senza gli hook si può interagire con il contesto tramite il consumer
+   * without hooks you can interact with the context through the consumer
    * <ListContext.Consumer>{value => (<div>{value.currentDetail}</div>)}</ListContext.Consumer>
    */
   return (

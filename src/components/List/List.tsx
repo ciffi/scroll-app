@@ -7,26 +7,26 @@ import ListItem from '../ListItem/ListItem'
 
 const List = () => {
   /**
-   * definisco gli stati del componente tramite l'hook useState
+   * define component states via the useState hook
    */
   const [items, setItems] = useState<any[]>([])
   const [currentPage, setCurrentPage] = useState(0)
 
   /**
-   * definisco il riferimento al nodo del dom tramite l'hook useRef
+   * define the reference to the dom node using the useRef hook
    */
   const newPageTriggerEl = useRef<HTMLDivElement | null>(null)
 
   /**
-   * utilizzo il custom hook useInPage che mi espone la funzione startInPageWatcher
-   * e la variabile isInPage
+   * use the custom hook useInPage which exposes the startInPageWatcher function
+   * and the isInPage variable
    */
   const { startInPageWatcher, isInPage } = useInPage()
 
   /**
-   * utilizzo l'hook useEffect aggiungendogli il "watch" sul riferimento newPageTriggerEl
-   * quando la costante viene valorizzata recupero la prima pagina items tramite getItem passandogli currentPage
-   * alla risposta aggiorno lo stato e utilizzo startInPageWatcher per eseguire le successive chiamate allo scroll
+   * use the useEffect hook by adding the "watch" on the newPageTriggerEl reference
+   * when the variable is set, I get the first items page through getItem, passing it currentPage
+   * at the answer I update the status and use startInPageWatcher to execute the following calls to scroll
    */
   useEffect(() => {
     getItems(currentPage).then((res: any) => {
@@ -38,9 +38,9 @@ const List = () => {
   }, [newPageTriggerEl])
 
   /**
-   * utilizzo l'hook useEffect aggiungendogli il "watch" sulla variabile isInPage
-   * quando la variabile viene modificata controllo che abbia il valore true e che la currentPage sia minore di 9
-   * se la condizione è valida aggiorno lo stato del componente
+   * use the useEffect hook by adding the "watch" on the isInPage variable
+   * when the variable is modified check that it has the value true and that the currentPage is less than 9
+   * if the condition is valid, I update the status of the component
    */
   useEffect(() => {
     if (isInPage && currentPage < 9) {
@@ -49,9 +49,9 @@ const List = () => {
   }, [isInPage])
 
   /**
-   * utilizzo l'hook useEffect aggiungendogli il "watch" sullo stato currentPage
-   * quando la variabile viene modificata controllo che sia maggiore di 0 e recupero la pagina successiva
-   * e ala risposta aggiorno lo stato
+   * use the useEffect hook by adding the "watch" to the currentPage state
+   * when the variable is changed I check that it is greater than 0 and fetch the next page
+   * and in response I update the status
    */
   useEffect(() => {
     if (currentPage > 0) {
@@ -62,10 +62,10 @@ const List = () => {
   }, [currentPage])
 
   /**
-   * utilizzo il contesto ListContext tramite il Provider,
-   * in questo modo i componenti inclusi come figlio ereditano lo stato globale del contesto
+   * use the ListContext context via the Provider,
+   * in this way the components included as children inherit the global state of the context
    *
-   * all'interno del componente StyledList itero gli items e per ognuno renderizzo il componente ListItem
+   * inside the StyledList component I cycle through the items and render the ListItem component for each one
    */
   return (
     <ListContextProvider>
